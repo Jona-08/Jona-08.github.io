@@ -1,150 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio - Diego Telenchana</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Diego Telenchana — Portafolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-      display: flex;
-      justify-content: center;
+    :root{--bg:#f6f7fb;--card:#ffffff;--accent:#0b63ff;--muted:#6b7280;--glass:rgba(255,255,255,0.55)}
+    *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{margin:0;background:linear-gradient(180deg,#f7f9ff 0%,var(--bg) 100%);color:#0b1220}
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+
+    /* HEADER */
+    header{display:flex;gap:28px;align-items:center}
+    .avatar{width:140px;height:140px;border-radius:12px;overflow:hidden;flex:0 0 140px;box-shadow:0 8px 30px rgba(15,23,42,0.12)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .hero{flex:1}
+    h1{margin:0;font-size:28px}
+    .role{color:var(--muted);margin-top:6px}
+    .contact{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;text-decoration:none;border:none;background:var(--accent);color:white;font-weight:600}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(11,99,255,0.12)}
+
+    /* MAIN */
+    main{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px}
+
+    /* CARDS */
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 24px rgba(15,23,42,0.06)}
+    .about p{color:#111827;margin:0 0 12px 0;line-height:1.5}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .skill{background:#eef2ff;color:#0b63ff;padding:6px 10px;border-radius:999px;font-size:13px}
+
+    .projects{display:grid;gap:12px;margin-top:12px}
+    .proj{display:flex;flex-direction:column;border-radius:10px;padding:14px;border:1px solid #eef2f8;background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent)}
+    .proj h3{margin:0;font-size:16px}
+    .proj p{margin:8px 0 12px;color:var(--muted);font-size:14px}
+    .proj a{font-weight:600;color:var(--accent);text-decoration:none}
+
+    aside .section{margin-bottom:16px}
+    .section h4{margin:0 0 10px 0}
+    .exp p{margin:0;color:var(--muted);font-size:14px}
+
+    /* SOCIAL LINKS */
+    .social-grid{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+    .social-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#0b1220;font-weight:600}
+    .social-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#eef2ff;font-size:18px}
+    .social-label{font-size:14px;color:#111827}
+
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* 📱 RESPONSIVE FIXES */
+    @media (max-width: 980px){
+      main{grid-template-columns:1fr}
     }
 
-    .container {
-      max-width: 900px;
-      width: 100%;
-      padding: 20px;
+    @media (max-width: 680px){
+      header{flex-direction:column;text-align:center}
+      .hero .contact{justify-content:center}
+      .avatar{margin-bottom:10px}
     }
-
-    .header {
-      text-align: center;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .header img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .header h1 {
-      margin: 10px 0 0;
-      font-size: 28px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    h3 {
-      margin-top: 0;
-      border-left: 4px solid #0077cc;
-      padding-left: 10px;
-    }
-
-    a {
-      display: block;
-      margin: 5px 0;
-      text-decoration: none;
-      color: #0077cc;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .social-container {
-      display: flex;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
-    .social-container a {
-      text-align: center;
-      font-size: 14px;
-      color: #333;
-    }
-
-    .social-container img {
-      width: 40px;
-      height: 40px;
-    }
-
   </style>
 </head>
+
 <body>
   <div class="container">
 
-    <div class="header">
-      <img src="image.jpeg" alt="Foto de perfil">
-      <h1>Diego Johnathan Telenchana Punina</h1>
-      <p>Estudiante de Desarrollo de Software</p>
-      <p>Ambato, Ecuador</p>
-      <p>Email: diegotelenchana.02sv@gmail.com | Tel: 0983425961</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Educación</h3>
-        <p><strong>Escuela:</strong> José Félix Ayala</p>
-        <p><strong>Colegio:</strong> Unidad Educativa Mario Cobo Barona</p>
-        <p><strong>Universidad:</strong> Universidad Técnica de Cotopaxi (Cursando)</p>
+    <!-- HEADER -->
+    <header>
+      <div class="avatar">
+        <img src="image.jpeg" alt="Foto de Diego Johnathan Telenchana Punina">
       </div>
 
-      <div class="card">
-        <h3>Experiencia</h3>
-        <p>Desarrollo de sistemas CRUD con PHP, Laravel y Django.</p>
-        <p>Integración de bases de datos MySQL y SQL Server.</p>
-        <p>Desarrollo de interfaces responsivas para sistemas web.</p>
-      </div>
+      <div class="hero">
+        <h1>Diego Johnathan Telenchana Punina</h1>
+        <div class="role">Estudiante • Desarrollo de Software</div>
 
-      <div class="card">
-        <h3>Proyectos</h3>
-        <a href="https://github.com/Jona-08/sistemaAplicaciones" target="_blank">Sistema Aplicaciones (GitHub)</a>
-        <a href="https://gitlab.com/Jonaaa/deportista" target="_blank">Deportista (GitLab)</a>
-        <a href="https://gitlab.com/Jonaaa/universidad" target="_blank">Universidad (GitLab)</a>
-        <a href="https://gitlab.com/jonaaa-group/sistemavotaciones" target="_blank">Sistema Votaciones (GitLab)</a>
-        <a href="https://github.com/Eddylucero/Adopciones" target="_blank">Sistema Adopciones (GitHub)</a>
-      </div>
-
-      <div class="card">
-        <h3>Redes Sociales</h3>
-        <div class="social-container">
-          <a href="https://www.facebook.com/diego.telenchana.7" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"><br>Facebook
-          </a>
-          <a href="https://www.instagram.com/iss_jona/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"><br>Instagram
-          </a>
-          <a href="https://www.linkedin.com/in/diego-johnathan-telenchana-punina-0636543a0/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"><br>LinkedIn
-          </a>
+        <div class="contact">
+          <a class="btn" href="mailto:diegotelenchana.02sv@gmail.com">✉️ diegotelenchana.02sv@gmail.com</a>
+          <a class="btn secondary" href="tel:+593983425961">📱 0983425961</a>
+          <a class="btn secondary" href="#download">⬇️ Descargar CV</a>
         </div>
       </div>
+    </header>
 
-    </div>
+    <!-- MAIN -->
+    <main>
 
+      <!-- LEFT COLUMN -->
+      <section>
+
+        <div class="card about">
+          <h2>Sobre mí</h2>
+          <p>Soy estudiante de desarrollo de software con experiencia en creación y mantenimiento de sistemas CRUD, consumo de APIs y manejo de bases de datos. Me destaco por aprender rápido, trabajar en equipo y entregar soluciones limpias y funcionales.</p>
+
+          <div style="margin-top:12px">
+            <h4>Habilidades</h4>
+            <div class="skills">
+              <div class="skill">Laravel</div>
+              <div class="skill">PHP</div>
+              <div class="skill">MySQL</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">HTML/CSS</div>
+              <div class="skill">Git</div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px">
+            <h4>Experiencia</h4>
+            <p>Desarrollo de sistemas para proyectos universitarios y personales: creación de interfaces, lógica de negocio y conexión con bases de datos. Participación en equipos de trabajo, pruebas y despliegues básicos.</p>
+          </div>
+        </div>
+
+        <!-- PROYECTOS -->
+        <div class="card" style="margin-top:16px">
+          <h2>Proyectos</h2>
+
+          <div class="projects">
+            <div class="proj">
+              <h3>Sistema de Aplicaciones</h3>
+              <p>Aplicación para gestionar solicitudes y procesos de aplicaciones — CRUD completo y gestión de usuarios.</p>
+              <a href="https://github.com/Jona-08/sistemaAplicaciones" target="_blank">Ver repositorio</a>
+            </div>
+
+            <div class="proj">
+              <h3>Deportista</h3>
+              <p>Proyecto para gestionar información de deportistas: registro, edición y reportes básicos.</p>
+              <a href="https://gitlab.com/Jonaaa/deportista" target="_blank">Ver repositorio (GitLab)</a>
+            </div>
+
+            <div class="proj">
+              <h3>Universidad</h3>
+              <p>Sistema académico con administración de estudiantes, materias y calificaciones.</p>
+              <a href="https://gitlab.com/Jonaaa/universidad" target="_blank">Ver repositorio (GitLab)</a>
+            </div>
+
+            <div class="proj">
+              <h3>Sistema de Votaciones</h3>
+              <p>Plataforma para gestionar votaciones electrónicas a nivel pequeño (prototipo).</p>
+              <a href="https://gitlab.com/jonaaa-group/sistemavotaciones" target="_blank">Ver repositorio (GitLab)</a>
+            </div>
+
+            <div class="proj">
+              <h3>Adopciones</h3>
+              <p>Aplicación para gestión de mascotas en adopción (repositorio público).</p>
+              <a href="https://github.com/Eddylucero/Adopciones" target="_blank">Ver repositorio</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <aside>
+
+        <div class="card section">
+          <h4>Contacto</h4>
+          <p>Email: diegotelenchana.02sv@gmail.com</p>
+          <p>Tel: 0983425961</p>
+          <p>Ubicación: Ambato, Ecuador</p>
+        </div>
+
+        <div class="card section">
+          <h4>Educación</h4>
+
+          <p><strong>Unidad Educativa José Félix Ayala</strong><br>
+          Educación General Básica</p>
+
+          <p><strong>Unidad Educativa Mario Cobo Barona</strong><br>
+          Bachillerato General Unificado</p>
+
+          <p><strong>Universidad Técnica de Cotopaxi</strong><br>
+          Carrera: Desarrollo de Software (En curso)</p>
+        </div>
+
+        <div class="card section">
+          <h4>Descargar CV</h4>
+          <p style="color:var(--muted)">Haz clic para descargar tu CV en PDF.</p>
+          <a id="download" class="btn" href="resume.pdf" download>Descargar CV</a>
+        </div>
+
+        <div class="card section">
+          <h4>Redes</h4>
+
+          <div class="social-grid">
+
+            <a class="social-item" href="https://www.facebook.com/diego.telenchana.7" target="_blank">
+              <div class="social-icon">📘</div>
+              <div class="social-label">Facebook</div>
+            </a>
+
+            <a class="social-item" href="https://www.instagram.com/iss_jona/" target="_blank">
+              <div class="social-icon">📸</div>
+              <div class="social-label">Instagram</div>
+            </a>
+
+            <a class="social-item" href="https://www.linkedin.com/in/diego-johnathan-telenchana-punina-0636543a0/" target="_blank">
+              <div class="social-icon">🔗</div>
+              <div class="social-label">LinkedIn</div>
+            </a>
+
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+
+    <footer>
+      Diseñado por Diego Johnathan • Portafolio generado automáticamente
+    </footer>
   </div>
 </body>
 </html>
