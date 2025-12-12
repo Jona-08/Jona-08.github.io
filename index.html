@@ -33,8 +33,6 @@
       color: var(--secondary);
       line-height: 1.6;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     .container {
@@ -42,7 +40,6 @@
       margin: 0 auto;
       padding: 28px;
       width: 100%;
-      flex: 1;
     }
 
     /* Header */
@@ -139,7 +136,6 @@
       grid-template-columns: 1fr 350px;
       gap: 28px;
       margin-top: 28px;
-      flex: 1;
     }
 
     /* Cards */
@@ -223,6 +219,7 @@
       position: relative;
       overflow: hidden;
       border-radius: var(--radius);
+      margin-top: 20px;
     }
 
     .carousel {
@@ -323,6 +320,10 @@
     }
 
     /* Aside */
+    aside .card {
+      height: fit-content;
+    }
+
     .social-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -384,14 +385,13 @@
       border-radius: 20px;
     }
 
-    /* Footer - AQUÍ ESTÁ EL CONTENIDO QUE VES DESORDENADO */
+    /* Footer */
     footer {
       background-color: var(--secondary);
       color: white;
       padding: 40px 0 20px;
       border-radius: var(--radius) var(--radius) 0 0;
-      margin-top: 40px;
-      width: 100%;
+      margin-top: 60px;
     }
 
     .footer-content {
@@ -456,7 +456,6 @@
     }
 
     /* ========== MEDIA QUERIES ========== */
-    /* Responsive - Como tu ejemplo original */
     @media (max-width: 980px) {
       main {
         grid-template-columns: 1fr;
@@ -709,7 +708,7 @@
         </div>
       </section>
 
-      <!-- Right Column -->
+      <!-- Right Column (EXPERIENCIA Y REDES) -->
       <aside>
         <!-- Experience -->
         <div class="card">
@@ -717,13 +716,13 @@
           <div class="experience-item">
             <div class="exp-date">2023 - Presente</div>
             <h4>Desarrollador de Software</h4>
-            <p>Desarrollo de sistemas para proyectos universitarios y personales: creación de interfaces, lógica de negocio y conexión con bases de datos.</p>
+            <p>Desarrollo de sistemas para proyectos universitarios y personales: creación de interfaces, lógica de negocio y conexión con bases de datos. Participación en equipos de trabajo, pruebas y despliegues básicos.</p>
           </div>
           
           <div class="experience-item">
             <div class="exp-date">2022 - 2023</div>
             <h4>Proyectos Académicos</h4>
-            <p>Desarrollo de aplicaciones web como parte de la formación universitaria, aplicando metodologías ágiles y buenas prácticas de desarrollo.</p>
+            <p>Desarrollo de aplicaciones web como parte de la formación universitaria, aplicando metodologías ágiles y buenas prácticas de desarrollo. Trabajo en equipo usando Git para control de versiones.</p>
           </div>
         </div>
 
@@ -762,20 +761,20 @@
           
           <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--gray-light);">
             <h4>Disponibilidad</h4>
-            <p>Actualmente disponible para proyectos freelance y prácticas profesionales relacionadas con desarrollo de software.</p>
+            <p>Actualmente disponible para proyectos freelance y prácticas profesionales relacionadas con desarrollo de software. Abierto a oportunidades de aprendizaje y colaboración.</p>
           </div>
         </div>
       </aside>
     </main>
-  </div> <!-- Cierre del container principal -->
+  </div>
 
-  <!-- FOOTER - Esto es lo que estaba saliendo mal -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
           <h4>Diego Telenchana</h4>
-          <p>Desarrollador de software en formación, especializado en creación de aplicaciones web y soluciones tecnológicas.</p>
+          <p>Desarrollador de software en formación, especializado en creación de aplicaciones web y soluciones tecnológicas. Comprometido con el aprendizaje continuo y las mejores prácticas de desarrollo.</p>
         </div>
         
         <div class="footer-section">
