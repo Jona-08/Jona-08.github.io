@@ -1,198 +1,505 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Hoja de Vida - Diego Johnathan Telenchana</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #f4f7fb;
-      color: #333;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diego Telenchana — Portafolio</title>
 
-    .container {
-      width: 85%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px 0;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    .header {
-      text-align: center;
-      padding: 30px;
-    }
+<style>
+/* ===============================
+   VARIABLES & BASE
+================================= */
+:root{
+  --primary:#2563eb;
+  --primary-dark:#1d4ed8;
+  --secondary:#0f172a;
+  --light:#f8fafc;
+  --gray:#64748b;
+  --gray-light:#e2e8f0;
+  --card-bg:#ffffff;
+  --shadow:0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg:0 10px 25px -5px rgba(0,0,0,0.1);
+  --radius:12px;
+}
 
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #007bff;
-      margin-bottom: 15px;
-    }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Inter',system-ui,sans-serif;
+}
 
-    h1 {
-      font-size: 32px;
-      margin: 10px 0 5px;
-      color: #222;
-    }
+body{
+  background-color:#f1f5f9;
+  color:var(--secondary);
+  line-height:1.6;
+}
 
-    h2 {
-      font-size: 18px;
-      color: #555;
-      margin-top: 0;
-    }
+/* ===============================
+   HEADER
+=================================*/
+header{
+  background:linear-gradient(135deg,var(--primary)0%,var(--primary-dark)100%);
+  color:white;
+  padding:40px 0;
+  margin-bottom:40px;
+}
 
-    .card {
-      background: #fff;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+.header-container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+}
 
-    h3 {
-      margin-top: 0;
-      color: #007bff;
-    }
+.header-content{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  flex-wrap:wrap;
+}
 
-    /* Redes sociales */
-    .social-links {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 10px;
-    }
+.avatar{
+  width:160px;height:160px;
+  border-radius:50%;
+  overflow:hidden;
+  border:5px solid rgba(255,255,255,0.3);
+  box-shadow:var(--shadow-lg);
+}
 
-    .social-links a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #333;
-      transition: 0.3s;
-    }
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .social-links a img {
-      width: 30px;
-      height: 30px;
-    }
+.hero{
+  flex:1;
+  min-width:300px;
+}
 
-    .social-links a:hover {
-      color: #007bff;
-      transform: translateX(6px);
-    }
+h1{
+  font-size:2.5rem;
+  font-weight:800;
+  margin-bottom:8px;
+}
 
-    /* Proyectos */
-    .project-list a {
-      display: block;
-      margin: 10px 0;
-      color: #444;
-      font-size: 17px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.role{
+  font-size:1.2rem;
+  opacity:0.9;
+  margin-bottom:20px;
+}
 
-    .project-list a:hover {
-      color: #007bff;
-      transform: translateX(6px);
-    }
+/* CONTACT BUTTONS */
+.contact{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
 
-  </style>
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s;
+}
+
+.btn-primary{background:white;color:var(--primary);}
+.btn-secondary{background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.15);}
+
+/* ===============================
+   MAIN CONTENT
+=================================*/
+.main-content{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+  padding:0;
+}
+
+/* CARDS */
+.card{
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow);
+  margin-bottom:20px;
+}
+
+h2{
+  font-size:1.8rem;
+  margin-bottom:20px;
+  color:var(--secondary);
+  position:relative;
+  padding-bottom:10px;
+}
+
+h2:after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;
+  width:60px;height:4px;
+  background-color:var(--primary);
+  border-radius:2px;
+}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:15px;
+}
+
+.skill{
+  background:#eff6ff;
+  color:var(--primary);
+  padding:8px 16px;
+  border-radius:50px;
+  font-size:0.9rem;
+  font-weight:600;
+  border:1px solid #dbeafe;
+}
+
+/* ===============================
+   EDUCACIÓN (NUEVA SECCIÓN)
+=================================*/
+.edu-item{
+  margin-bottom:15px;
+  padding-left:10px;
+  border-left:4px solid var(--primary);
+}
+
+.edu-item h4{
+  margin-bottom:3px;
+  color:var(--primary-dark);
+}
+
+.edu-year{
+  font-size:0.9rem;
+  color:var(--gray);
+}
+
+/* ===============================
+   ASIDE
+=================================*/
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:15px;
+}
+
+.social-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:15px;
+  background:#f8fafc;
+  border-radius:var(--radius);
+  text-decoration:none;
+  color:var(--secondary);
+  border:1px solid var(--gray-light);
+}
+
+.social-icon{font-size:1.5rem;margin-bottom:8px;}
+.experience-item{margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid var(--gray-light);}
+.exp-date{color:var(--primary);font-weight:700;font-size:0.9rem;background:#eff6ff;padding:4px 10px;border-radius:20px;margin-bottom:5px;}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+@media (max-width:980px){
+  .main-content{grid-template-columns:1fr;padding:0 20px}
+  .header-content{flex-direction:column;text-align:center;gap:30px}
+  .avatar{margin:0 auto}
+  .contact{justify-content:center}
+}
+
+@media (max-width:768px){
+  .contact{flex-direction:column;align-items:center}
+  .btn{width:100%;max-width:280px;justify-content:center}
+  .social-grid{grid-template-columns:1fr}
+  .skills{justify-content:center}
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
+<!-- ===========================================
+                 HEADER
+===========================================-->
+<header>
+  <div class="header-container">
+    <div class="header-content">
 
-    <!-- ENCABEZADO -->
-    <div class="header">
-      <img src="image.jpeg" class="profile-img" alt="Foto de perfil">
-      <h1>Diego Johnathan Telenchana Punina</h1>
-      <h2>Estudiante de Desarrollo de Software</h2>
-      <p>📩 diegotelenchana.02sv@gmail.com | 📱 0983425961 | 📍 Ambato - Ecuador</p>
-    </div>
-
-    <!-- PERFIL -->
-    <div class="card">
-      <h3>Perfil Profesional</h3>
-      <p>
-        Estudiante de desarrollo de software con experiencia práctica en la creación de aplicaciones web,
-        manejo de bases de datos y diseño de interfaces. Proactivo, responsable y con habilidades para el
-        trabajo en equipo. Enfocado en seguir aprendiendo tecnologías modernas y mejorar cada proyecto en el que participo.
-      </p>
-    </div>
-
-    <!-- EXPERIENCIA -->
-    <div class="card">
-      <h3>Experiencia</h3>
-      <ul>
-        <li>
-          Desarrollador Jr. en proyectos académicos (2023 - Actualidad).  
-          Participación en aplicaciones web utilizando PHP, Laravel, Django y MySQL.
-        </li>
-        <li>
-          Colaborador en sistemas de votación, gestión de deportistas y administración universitaria.
-        </li>
-      </ul>
-    </div>
-
-    <!-- EDUCACIÓN -->
-    <div class="card">
-      <h3>Educación</h3>
-      <p><strong>Instituto Tecnológico Superior España – ITSQMET</strong></p>
-      <p>Tecnología Superior en Desarrollo de Software</p>
-      <p>2023 - Presente</p>
-    </div>
-
-    <!-- HABILIDADES -->
-    <div class="card">
-      <h3>Habilidades Técnicas</h3>
-      <ul>
-        <li>HTML, CSS, JavaScript</li>
-        <li>PHP, Laravel</li>
-        <li>Python, Django</li>
-        <li>MySQL, PostgreSQL</li>
-        <li>Git, GitHub, GitLab</li>
-      </ul>
-    </div>
-
-    <!-- PROYECTOS -->
-    <div class="card">
-      <h3>Proyectos</h3>
-      <div class="project-list">
-        <a href="https://github.com/Jona-08/sistemaAplicaciones" target="_blank">📌 Sistema de Aplicaciones (GitHub)</a>
-        <a href="https://gitlab.com/Jonaaa/deportista" target="_blank">📌 Sistema de Deportistas (GitLab)</a>
-        <a href="https://gitlab.com/Jonaaa/universidad" target="_blank">📌 Sistema Universitario (GitLab)</a>
-        <a href="https://gitlab.com/jonaaa-group/sistemavotaciones" target="_blank">📌 Sistema de Votaciones (GitLab)</a>
-        <a href="https://github.com/Eddylucero/Adopciones" target="_blank">📌 Sistema de Adopciones (GitHub)</a>
+      <div class="avatar">
+        <img src="image.jpeg" alt="Diego Telenchana">
       </div>
+
+      <div class="hero">
+        <h1>Diego Johnathan Telenchana Punina</h1>
+        <div class="role">Estudiante • Desarrollo de Software</div>
+
+        <div class="contact">
+          <a class="btn btn-primary" href="mailto:diegotelenchana.02sv@gmail.com"><i class="fas fa-envelope"></i>Email</a>
+          <a class="btn btn-secondary" href="tel:+593983425961"><i class="fas fa-phone"></i>0983425961</a>
+          <a class="btn btn-secondary" href="#"><i class="fas fa-download"></i>Descargar CV</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ===========================================
+                MAIN CONTENT
+===========================================-->
+<div class="main-content">
+
+<section>
+
+  <!-- SOBRE MÍ -->
+  <div class="card">
+    <h2>Sobre mí</h2>
+    <p>Soy estudiante de desarrollo de software con experiencia en sistemas CRUD, APIs REST, MySQL, interfaces web y despliegues básicos. Me destaco por aprender rápido y trabajar en equipo.</p>
+
+    <h3>Habilidades Técnicas</h3>
+    <div class="skills">
+      <div class="skill">Laravel</div><div class="skill">PHP</div><div class="skill">MySQL</div>
+      <div class="skill">JavaScript</div><div class="skill">HTML/CSS</div><div class="skill">Git</div>
+      <div class="skill">Bootstrap</div><div class="skill">APIs REST</div><div class="skill">Python</div>
+      <div class="skill">Docker</div>
+    </div>
+  </div>
+
+  <!-- EDUCACIÓN -->
+  <div class="card">
+    <h2>Educación</h2>
+
+    <div class="edu-item">
+      <h4>Unidad Educativa José Félix Ayala</h4>
+      <p class="edu-year">Educación General Básica</p>
     </div>
 
-    <!-- REDES SOCIALES -->
-    <div class="card">
-      <h3>Redes Sociales</h3>
+    <div class="edu-item">
+      <h4>Unidad Educativa Mario Cobo Barona</h4>
+      <p class="edu-year">Bachillerato General Unificado</p>
+    </div>
 
-      <div class="social-links">
-        <a href="https://www.facebook.com/diego.telenchana.7" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-          <span>Facebook</span>
-        </a>
-
-        <a href="https://www.instagram.com/iss_jona/" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-          <span>Instagram</span>
-        </a>
-
-        <a href="https://www.linkedin.com/in/diego-johnathan-telenchana-punina-0636543a0/" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn">
-          <span>LinkedIn</span>
-        </a>
-      </div>
+    <div class="edu-item">
+      <h4>Universidad Técnica de Cotopaxi</h4>
+      <p class="edu-year">Cursando — Tecnología Superior en Desarrollo de Software</p>
     </div>
 
   </div>
+
+  <!-- PROYECTOS -->
+  <div class="card">
+    <h2>Proyectos Destacados</h2>
+
+    <div class="carousel-container">
+      <div class="carousel" id="carousel">
+
+        <div class="carousel-item">
+          <div class="proj">
+            <h3>Sistema de Aplicaciones</h3>
+            <p>CRUD completo y gestión de usuarios.</p>
+            <a class="proj-link" href="https://github.com/Jona-08/sistemaAplicaciones" target="_blank">
+              Ver repositorio <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="proj">
+            <h3>Deportista</h3>
+            <p>Registro, edición y reportes de deportistas.</p>
+            <a class="proj-link" href="https://gitlab.com/Jonaaa/deportista" target="_blank">
+              Ver en GitLab <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="proj">
+            <h3>Sistema Universitario</h3>
+            <p>Administración de estudiantes y calificaciones.</p>
+            <a class="proj-link" href="https://gitlab.com/Jonaaa/universidad" target="_blank">
+              Ver en GitLab <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTROLES -->
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <!-- DOTS -->
+      <div class="carousel-dots" id="dotsContainer"></div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ===========================================
+                ASIDE
+===========================================-->
+<aside>
+
+  <div class="card">
+    <h3>Experiencia</h3>
+
+    <div class="experience-item">
+      <div class="exp-date">2023 - Presente</div>
+      <h4>Desarrollador de Software</h4>
+      <p>Creación de interfaces, lógica de negocio y manejo de bases de datos.</p>
+    </div>
+
+    <div class="experience-item">
+      <div class="exp-date">2022 - 2023</div>
+      <h4>Proyectos Académicos</h4>
+      <p>Aplicaciones web universitarias aplicando metodologías ágiles.</p>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h3>Redes y Contacto</h3>
+
+    <div class="social-grid">
+
+      <a class="social-item" href="https://www.linkedin.com/in/diego-johnathan-telenchana-punina-0636543a0/" target="_blank">
+        <div class="social-icon"><i class="fab fa-linkedin"></i></div>
+        <div class="social-label">LinkedIn</div>
+      </a>
+
+      <a class="social-item" href="https://github.com/Jona-08" target="_blank">
+        <div class="social-icon"><i class="fab fa-github"></i></div>
+        <div class="social-label">GitHub</div>
+      </a>
+
+      <a class="social-item" href="https://gitlab.com/Jonaaa" target="_blank">
+        <div class="social-icon"><i class="fab fa-gitlab"></i></div>
+        <div class="social-label">GitLab</div>
+      </a>
+
+      <a class="social-item" href="mailto:diegotelenchana.02sv@gmail.com">
+        <div class="social-icon"><i class="fas fa-envelope"></i></div>
+        <div class="social-label">Email</div>
+      </a>
+
+    </div>
+
+  </div>
+
+</aside>
+
+</div>
+
+<!-- ===========================================
+                FOOTER
+===========================================-->
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Diego Telenchana</h4>
+        <p>Desarrollador de software en formación.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Enlaces Rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Sobre mí</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Proyectos</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Habilidades</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:diegotelenchana.02sv@gmail.com"><i class="fas fa-envelope"></i>Email</a></li>
+          <li><a href="tel:+593983425961"><i class="fas fa-phone"></i>0983425961</a></li>
+          <li><a href="#"><i class="fas fa-download"></i>Descargar CV</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2025 Diego Johnathan Telenchana Punina</p>
+      <p>Portafolio profesional</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ===========================================
+                JS (CORREGIDO)
+===========================================-->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  const carousel = document.getElementById('carousel');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsContainer = document.getElementById('dotsContainer');
+
+  let currentIndex = 0;
+  const totalItems = items.length;
+
+  // Create dots
+  for (let i = 0; i < totalItems; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = document.querySelectorAll('.dot');
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot, index) => dot.classList.toggle('active', index === currentIndex));
+  }
+
+  function nextSlide() { currentIndex = (currentIndex + 1) % totalItems; updateCarousel(); }
+  function prevSlide() { currentIndex = (currentIndex - 1 + totalItems) % totalItems; updateCarousel(); }
+  function goToSlide(i) { currentIndex = i; updateCarousel(); }
+
+  let autoSlide = setInterval(nextSlide, 5000);
+  function resetAutoSlide(){ clearInterval(autoSlide); autoSlide = setInterval(nextSlide, 5000); }
+
+  nextBtn.addEventListener('click', ()=>{ nextSlide(); resetAutoSlide(); });
+  prevBtn.addEventListener('click', ()=>{ prevSlide(); resetAutoSlide(); });
+
+  const container = document.querySelector('.carousel-container');
+  container.addEventListener('mouseenter', ()=>clearInterval(autoSlide));
+  container.addEventListener('mouseleave', ()=>autoSlide = setInterval(nextSlide, 5000));
+
+  updateCarousel();
+});
+</script>
 
 </body>
 </html>
