@@ -33,13 +33,12 @@
       color: var(--secondary);
       line-height: 1.6;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 28px;
       width: 100%;
     }
 
@@ -55,8 +54,8 @@
 
     .header-content {
       display: flex;
-      align-items: center;
       gap: 40px;
+      align-items: center;
       flex-wrap: wrap;
     }
 
@@ -68,10 +67,6 @@
       border: 5px solid rgba(255, 255, 255, 0.3);
       flex-shrink: 0;
       box-shadow: var(--shadow-lg);
-      background-color: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .avatar img {
@@ -82,7 +77,7 @@
 
     .hero {
       flex: 1;
-      min-width: 280px;
+      min-width: 300px;
     }
 
     h1 {
@@ -117,7 +112,6 @@
       transition: var(--transition);
       cursor: pointer;
       border: none;
-      white-space: nowrap;
     }
 
     .btn-primary {
@@ -136,32 +130,22 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
-    .btn-primary:hover {
-      background-color: #f0f9ff;
-    }
-
-    .btn-secondary:hover {
-      background-color: rgba(255, 255, 255, 0.25);
-    }
-
     /* Main content */
     main {
       display: grid;
       grid-template-columns: 1fr 350px;
-      gap: 30px;
-      margin-bottom: 40px;
-      width: 100%;
+      gap: 28px;
+      margin-top: 28px;
     }
 
     /* Cards */
     .card {
       background-color: var(--card-bg);
       border-radius: var(--radius);
-      padding: 30px;
+      padding: 25px;
       box-shadow: var(--shadow);
       margin-bottom: 20px;
       transition: var(--transition);
-      width: 100%;
     }
 
     .card:hover {
@@ -211,7 +195,6 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 15px;
-      width: 100%;
     }
 
     .skill {
@@ -223,7 +206,6 @@
       font-weight: 600;
       transition: var(--transition);
       border: 1px solid #dbeafe;
-      flex-shrink: 0;
     }
 
     .skill:hover {
@@ -233,24 +215,15 @@
     }
 
     /* Projects Carousel */
-    .projects-section {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius);
-      width: 100%;
-    }
-
     .carousel-container {
       position: relative;
       overflow: hidden;
       border-radius: var(--radius);
-      width: 100%;
     }
 
     .carousel {
       display: flex;
       transition: transform 0.5s ease;
-      width: 100%;
     }
 
     .carousel-item {
@@ -259,7 +232,6 @@
       background-color: var(--card-bg);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      flex-shrink: 0;
     }
 
     .proj {
@@ -303,7 +275,6 @@
       justify-content: center;
       gap: 15px;
       margin-top: 25px;
-      width: 100%;
     }
 
     .carousel-btn {
@@ -319,7 +290,6 @@
       cursor: pointer;
       transition: var(--transition);
       font-size: 1.2rem;
-      flex-shrink: 0;
     }
 
     .carousel-btn:hover {
@@ -332,7 +302,6 @@
       justify-content: center;
       gap: 10px;
       margin-top: 20px;
-      width: 100%;
     }
 
     .dot {
@@ -342,7 +311,6 @@
       background-color: var(--gray-light);
       cursor: pointer;
       transition: var(--transition);
-      flex-shrink: 0;
     }
 
     .dot.active {
@@ -351,16 +319,11 @@
     }
 
     /* Aside */
-    aside .card {
-      height: fit-content;
-    }
-
     .social-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
       margin-top: 20px;
-      width: 100%;
     }
 
     .social-item {
@@ -392,14 +355,12 @@
     .social-label {
       font-weight: 600;
       font-size: 0.9rem;
-      text-align: center;
     }
 
     .experience-item {
       margin-bottom: 25px;
       padding-bottom: 20px;
       border-bottom: 1px solid var(--gray-light);
-      width: 100%;
     }
 
     .experience-item:last-child {
@@ -423,17 +384,16 @@
     footer {
       background-color: var(--secondary);
       color: white;
-      padding: 50px 0 25px;
+      padding: 40px 0 20px;
       border-radius: var(--radius) var(--radius) 0 0;
       margin-top: 40px;
-      width: 100%;
     }
 
     .footer-content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-bottom: 40px;
+      gap: 30px;
+      margin-bottom: 30px;
     }
 
     .footer-section h4 {
@@ -484,60 +444,51 @@
 
     .copyright {
       text-align: center;
-      padding-top: 25px;
+      padding-top: 20px;
       border-top: 1px solid #334155;
       color: #94a3b8;
       font-size: 0.9rem;
-      line-height: 1.6;
     }
 
-    /* ========== RESPONSIVE DESIGN ========== */
-
-    /* Tablets (768px - 992px) */
-    @media (max-width: 992px) {
+    /* ========== MEDIA QUERIES ========== */
+    /* Responsive - Como tu ejemplo original */
+    @media (max-width: 980px) {
       main {
         grid-template-columns: 1fr;
-        gap: 20px;
       }
       
-      .header-content {
-        gap: 30px;
-      }
-      
-      h1 {
-        font-size: 2.2rem;
-      }
-      
-      .card {
-        padding: 25px;
-      }
-      
-      .footer-content {
-        gap: 30px;
-      }
-    }
-
-    /* Tablets pequeñas y móviles grandes (576px - 768px) */
-    @media (max-width: 768px) {
       .header-content {
         flex-direction: column;
         text-align: center;
-        gap: 25px;
-      }
-      
-      .avatar {
-        width: 140px;
-        height: 140px;
-        margin: 0 auto;
+        gap: 30px;
       }
       
       .hero {
         width: 100%;
-        text-align: center;
       }
       
       .contact {
         justify-content: center;
+      }
+      
+      .avatar {
+        margin: 0 auto;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .footer-section h4:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
       }
       
       h1 {
@@ -553,58 +504,9 @@
         font-size: 0.9rem;
       }
       
-      .skills {
-        justify-content: center;
-      }
-      
-      .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-      }
-      
-      .social-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .carousel-controls {
-        gap: 10px;
-      }
-      
-      .carousel-btn {
-        width: 45px;
-        height: 45px;
-      }
-    }
-
-    /* Móviles medianos (425px - 576px) */
-    @media (max-width: 576px) {
-      .container {
-        padding: 0 15px;
-      }
-      
-      header {
-        padding: 30px 0;
-        margin-bottom: 30px;
-      }
-      
-      .avatar {
-        width: 120px;
-        height: 120px;
-      }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      .role {
-        font-size: 1rem;
-        margin-bottom: 15px;
-      }
-      
       .contact {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
       }
       
       .btn {
@@ -625,171 +527,8 @@
         font-size: 1.2rem;
       }
       
-      .proj {
-        padding: 20px;
-      }
-      
-      .skills {
-        gap: 10px;
-      }
-      
-      .skill {
-        padding: 8px 14px;
-        font-size: 0.85rem;
-      }
-      
       .social-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
-      }
-      
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-      
-      .footer-section {
-        text-align: center;
-      }
-      
-      .footer-section h4:after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      
-      .carousel-controls {
-        gap: 8px;
-      }
-      
-      .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-      }
-    }
-
-    /* Móviles pequeños (hasta 425px) */
-    @media (max-width: 425px) {
-      .container {
-        padding: 0 12px;
-      }
-      
-      header {
-        padding: 25px 0;
-        margin-bottom: 25px;
-        border-radius: 0 0 8px 8px;
-      }
-      
-      .avatar {
-        width: 110px;
-        height: 110px;
-      }
-      
-      h1 {
-        font-size: 1.6rem;
-      }
-      
-      .role {
-        font-size: 0.95rem;
-      }
-      
-      .card {
-        padding: 18px;
-        border-radius: 10px;
-      }
-      
-      h2 {
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-      }
-      
-      h2:after {
-        height: 3px;
-        width: 50px;
-      }
-      
-      h3 {
-        font-size: 1.1rem;
-        margin-bottom: 12px;
-      }
-      
-      p {
-        font-size: 0.95rem;
-      }
-      
-      .proj {
-        padding: 18px;
-      }
-      
-      .proj h3 {
-        font-size: 1.2rem;
-      }
-      
-      .skills {
-        gap: 8px;
-      }
-      
-      .skill {
-        padding: 7px 12px;
-        font-size: 0.8rem;
-      }
-      
-      .experience-item {
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-      }
-      
-      .exp-date {
-        font-size: 0.85rem;
-        padding: 4px 10px;
-      }
-      
-      .copyright {
-        font-size: 0.8rem;
-        padding-top: 20px;
-      }
-      
-      .carousel-btn {
-        width: 38px;
-        height: 38px;
-      }
-      
-      .dot {
-        width: 8px;
-        height: 8px;
-      }
-    }
-
-    /* Móviles muy pequeños (hasta 320px) */
-    @media (max-width: 320px) {
-      .avatar {
-        width: 100px;
-        height: 100px;
-      }
-      
-      h1 {
-        font-size: 1.4rem;
-      }
-      
-      .role {
-        font-size: 0.9rem;
-      }
-      
-      .btn {
-        padding: 8px 12px;
-        font-size: 0.85rem;
-      }
-      
-      .card {
-        padding: 15px;
-      }
-      
-      h2 {
-        font-size: 1.3rem;
-      }
-      
-      h3 {
-        font-size: 1.05rem;
       }
       
       .skills {
@@ -797,20 +536,40 @@
       }
       
       .skill {
-        padding: 6px 10px;
-        font-size: 0.78rem;
+        padding: 8px 14px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 30px 0;
       }
       
-      .social-grid {
-        gap: 8px;
+      .avatar {
+        width: 140px;
+        height: 140px;
       }
       
-      .social-item {
-        padding: 15px 10px;
+      h1 {
+        font-size: 1.8rem;
       }
       
-      .social-icon {
-        font-size: 1.5rem;
+      .role {
+        font-size: 1rem;
+      }
+      
+      .carousel-btn {
+        width: 45px;
+        height: 45px;
+      }
+      
+      .proj {
+        padding: 20px;
+      }
+      
+      .footer-content {
+        gap: 25px;
       }
     }
   </style>
@@ -869,7 +628,7 @@
         </div>
 
         <!-- Projects Carousel -->
-        <div class="card projects-section">
+        <div class="card">
           <h2>Proyectos Destacados</h2>
           <div class="carousel-container">
             <div class="carousel" id="carousel">
@@ -877,7 +636,7 @@
               <div class="carousel-item">
                 <div class="proj">
                   <h3>Sistema de Aplicaciones</h3>
-                  <p>Aplicación para gestionar solicitudes y procesos de aplicaciones — CRUD completo y gestión de usuarios. Sistema desarrollado con Laravel y MySQL, con interfaz responsiva y autenticación de usuarios.</p>
+                  <p>Aplicación para gestionar solicitudes y procesos de aplicaciones — CRUD completo y gestión de usuarios. Sistema desarrollado con Laravel y MySQL.</p>
                   <a class="proj-link" href="https://github.com/Jona-08/sistemaAplicaciones" target="_blank">
                     Ver repositorio <i class="fas fa-arrow-right"></i>
                   </a>
@@ -888,7 +647,7 @@
               <div class="carousel-item">
                 <div class="proj">
                   <h3>Deportista</h3>
-                  <p>Proyecto para gestionar información de deportistas: registro, edición y reportes básicos. Implementa base de datos relacional y generación de reportes en PDF. Desarrollado con PHP nativo y Bootstrap.</p>
+                  <p>Proyecto para gestionar información de deportistas: registro, edición y reportes básicos. Desarrollado con PHP nativo y Bootstrap.</p>
                   <a class="proj-link" href="https://gitlab.com/Jonaaa/deportista" target="_blank">
                     Ver en GitLab <i class="fas fa-arrow-right"></i>
                   </a>
@@ -899,7 +658,7 @@
               <div class="carousel-item">
                 <div class="proj">
                   <h3>Sistema Universitario</h3>
-                  <p>Sistema académico con administración de estudiantes, materias y calificaciones. Incluye módulos para profesores, estudiantes y administradores. Desarrollado con Laravel, MySQL y JavaScript.</p>
+                  <p>Sistema académico con administración de estudiantes, materias y calificaciones. Desarrollado con Laravel, MySQL y JavaScript.</p>
                   <a class="proj-link" href="https://gitlab.com/Jonaaa/universidad" target="_blank">
                     Ver en GitLab <i class="fas fa-arrow-right"></i>
                   </a>
@@ -910,7 +669,7 @@
               <div class="carousel-item">
                 <div class="proj">
                   <h3>Sistema de Votaciones</h3>
-                  <p>Plataforma para gestionar votaciones electrónicas a nivel pequeño (prototipo). Implementa autenticación segura, registro de votos y generación de resultados en tiempo real. Tecnologías: PHP, JavaScript, Chart.js.</p>
+                  <p>Plataforma para gestionar votaciones electrónicas. Implementa autenticación segura y generación de resultados en tiempo real.</p>
                   <a class="proj-link" href="https://gitlab.com/jonaaa-group/sistemavotaciones" target="_blank">
                     Ver en GitLab <i class="fas fa-arrow-right"></i>
                   </a>
@@ -921,7 +680,7 @@
               <div class="carousel-item">
                 <div class="proj">
                   <h3>Sistema de Adopciones</h3>
-                  <p>Aplicación para gestión de mascotas en adopción (repositorio y recursos públicos). Permite publicar mascotas disponibles, solicitar adopciones y realizar seguimiento. Desarrollado en equipo con Git como control de versiones.</p>
+                  <p>Aplicación para gestión de mascotas en adopción. Permite publicar mascotas disponibles y solicitar adopciones.</p>
                   <a class="proj-link" href="https://github.com/Eddylucero/Adopciones" target="_blank">
                     Ver repositorio <i class="fas fa-arrow-right"></i>
                   </a>
@@ -953,13 +712,13 @@
           <div class="experience-item">
             <div class="exp-date">2023 - Presente</div>
             <h4>Desarrollador de Software</h4>
-            <p>Desarrollo de sistemas para proyectos universitarios y personales: creación de interfaces, lógica de negocio y conexión con bases de datos. Participación en equipos de trabajo, pruebas y despliegues básicos.</p>
+            <p>Desarrollo de sistemas para proyectos universitarios y personales: creación de interfaces, lógica de negocio y conexión con bases de datos.</p>
           </div>
           
           <div class="experience-item">
             <div class="exp-date">2022 - 2023</div>
             <h4>Proyectos Académicos</h4>
-            <p>Desarrollo de aplicaciones web como parte de la formación universitaria, aplicando metodologías ágiles y buenas prácticas de desarrollo. Trabajo en equipo usando Git para control de versiones.</p>
+            <p>Desarrollo de aplicaciones web como parte de la formación universitaria, aplicando metodologías ágiles y buenas prácticas de desarrollo.</p>
           </div>
         </div>
 
@@ -998,7 +757,7 @@
           
           <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--gray-light);">
             <h4>Disponibilidad</h4>
-            <p>Actualmente disponible para proyectos freelance y prácticas profesionales relacionadas con desarrollo de software. Abierto a oportunidades de aprendizaje y colaboración.</p>
+            <p>Actualmente disponible para proyectos freelance y prácticas profesionales relacionadas con desarrollo de software.</p>
           </div>
         </div>
       </aside>
@@ -1010,7 +769,7 @@
         <div class="footer-content">
           <div class="footer-section">
             <h4>Diego Telenchana</h4>
-            <p>Desarrollador de software en formación, especializado en creación de aplicaciones web y soluciones tecnológicas. Comprometido con el aprendizaje continuo y las mejores prácticas de desarrollo.</p>
+            <p>Desarrollador de software en formación, especializado en creación de aplicaciones web y soluciones tecnológicas.</p>
           </div>
           
           <div class="footer-section">
@@ -1125,11 +884,6 @@
       
       // Initialize carousel
       updateCarousel();
-      
-      // Handle window resize
-      window.addEventListener('resize', function() {
-        updateCarousel();
-      });
     });
   </script>
 </body>
