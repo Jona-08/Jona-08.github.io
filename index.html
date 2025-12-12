@@ -5,212 +5,323 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Diego Telenchana — Portafolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root{--bg:#f6f7fb;--card:#ffffff;--accent:#0b63ff;--muted:#6b7280;--glass:rgba(255,255,255,0.55)}
-    *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
-    body{margin:0;background:linear-gradient(180deg,#f7f9ff 0%,var(--bg) 100%);color:#0b1220}
-    .container{max-width:1100px;margin:36px auto;padding:28px}
-
-    /* HEADER */
-    header{display:flex;gap:28px;align-items:center}
-    .avatar{width:140px;height:140px;border-radius:12px;overflow:hidden;flex:0 0 140px;box-shadow:0 8px 30px rgba(15,23,42,0.12)}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .hero{flex:1}
-    h1{margin:0;font-size:28px}
-    .role{color:var(--muted);margin-top:6px}
-    .contact{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    :root{--primary:#2563eb;--primary-dark:#1d4ed8;--secondary:#0f172a;--light:#f8fafc;--gray:#64748b;--gray-light:#e2e8f0;--card-bg:#ffffff;--shadow:0 4px 6px -1px rgba(0,0,0,0.1);--shadow-lg:0 10px 25px -5px rgba(0,0,0,0.1);--radius:12px}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',system-ui,sans-serif}
+    body{background-color:#f1f5f9;color:var(--secondary);line-height:1.6}
     
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;text-decoration:none;border:none;background:var(--accent);color:white;font-weight:600}
-    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(11,99,255,0.12)}
-
-    /* MAIN */
-    main{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px}
-
+    /* HEADER */
+    header{background:linear-gradient(135deg,var(--primary)0%,var(--primary-dark)100%);color:white;padding:40px 0;margin-bottom:40px}
+    .header-container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .header-content{display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+    .avatar{width:160px;height:160px;border-radius:50%;overflow:hidden;border:5px solid rgba(255,255,255,0.3);box-shadow:var(--shadow-lg)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .hero{flex:1;min-width:300px}
+    h1{font-size:2.5rem;font-weight:800;margin-bottom:8px}
+    .role{font-size:1.2rem;opacity:0.9;margin-bottom:20px}
+    .contact{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;transition:all 0.3s}
+    .btn-primary{background-color:white;color:var(--primary)}
+    .btn-secondary{background-color:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.15)}
+    
+    /* MAIN CONTENT */
+    .main-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:20px;padding:0}
+    
     /* CARDS */
-    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 24px rgba(15,23,42,0.06)}
-    .about p{color:#111827;margin:0 0 12px 0;line-height:1.5}
-    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .skill{background:#eef2ff;color:#0b63ff;padding:6px 10px;border-radius:999px;font-size:13px}
-
-    .projects{display:grid;gap:12px;margin-top:12px}
-    .proj{display:flex;flex-direction:column;border-radius:10px;padding:14px;border:1px solid #eef2f8;background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent)}
-    .proj h3{margin:0;font-size:16px}
-    .proj p{margin:8px 0 12px;color:var(--muted);font-size:14px}
-    .proj a{font-weight:600;color:var(--accent);text-decoration:none}
-
-    aside .section{margin-bottom:16px}
-    .section h4{margin:0 0 10px 0}
-    .exp p{margin:0;color:var(--muted);font-size:14px}
-
-    /* SOCIAL LINKS */
-    .social-grid{display:flex;flex-direction:column;gap:14px;margin-top:10px}
-    .social-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:#0b1220;font-weight:600}
-    .social-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#eef2ff;font-size:18px}
-    .social-label{font-size:14px;color:#111827}
-
-    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:13px}
-
-    /* 📱 RESPONSIVE FIXES */
-    @media (max-width: 980px){
-      main{grid-template-columns:1fr}
+    .card{background:var(--card-bg);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:20px}
+    h2{font-size:1.8rem;margin-bottom:20px;color:var(--secondary);position:relative;padding-bottom:10px}
+    h2:after{content:'';position:absolute;bottom:0;left:0;width:60px;height:4px;background-color:var(--primary);border-radius:2px}
+    h3{font-size:1.3rem;margin-bottom:15px}
+    h4{font-size:1.1rem;margin-bottom:8px;color:var(--secondary)}
+    p{color:var(--gray);margin-bottom:15px;line-height:1.7}
+    
+    /* SKILLS */
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+    .skill{background:#eff6ff;color:var(--primary);padding:8px 16px;border-radius:50px;font-size:0.9rem;font-weight:600;border:1px solid #dbeafe}
+    
+    /* CARRUSEL */
+    .carousel-container{position:relative;overflow:hidden;border-radius:var(--radius);margin-top:20px}
+    .carousel{display:flex;transition:transform 0.5s}
+    .carousel-item{min-width:100%;padding:20px}
+    .proj{padding:20px;border-left:4px solid var(--primary);background:#f8fafc;border-radius:0 var(--radius) var(--radius) 0}
+    .proj h3{color:var(--primary);margin-top:0}
+    .proj-link{display:inline-flex;align-items:center;gap:8px;color:var(--primary);font-weight:600;text-decoration:none;padding:10px 0}
+    .carousel-controls{display:flex;justify-content:center;gap:15px;margin-top:20px}
+    .carousel-btn{width:40px;height:40px;border-radius:50%;background:var(--primary);color:white;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:15px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--gray-light);cursor:pointer}
+    .dot.active{background:var(--primary)}
+    
+    /* ASIDE */
+    .social-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:15px}
+    .social-item{display:flex;flex-direction:column;align-items:center;padding:15px;background:#f8fafc;border-radius:var(--radius);text-decoration:none;color:var(--secondary);border:1px solid var(--gray-light)}
+    .social-icon{font-size:1.5rem;margin-bottom:8px}
+    .experience-item{margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid var(--gray-light)}
+    .exp-date{color:var(--primary);font-weight:700;font-size:0.9rem;margin-bottom:5px;background:#eff6ff;padding:4px 10px;border-radius:20px}
+    
+    /* FOOTER */
+    footer{background:var(--secondary);color:white;padding:40px 0 20px;margin-top:60px}
+    .footer-container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .footer-content{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-bottom:30px}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:10px}
+    .footer-links a{color:#cbd5e1;text-decoration:none;display:flex;align-items:center;gap:8px}
+    .copyright{text-align:center;padding-top:20px;border-top:1px solid #334155;color:#94a3b8}
+    
+    /* RESPONSIVE */
+    @media (max-width:980px){
+      .main-content{grid-template-columns:1fr;padding:0 20px}
+      .header-content{flex-direction:column;text-align:center;gap:30px}
+      .avatar{margin:0 auto}
+      .contact{justify-content:center}
+      .footer-content{grid-template-columns:1fr;text-align:center}
     }
-
-    @media (max-width: 680px){
-      header{flex-direction:column;text-align:center}
-      .hero .contact{justify-content:center}
-      .avatar{margin-bottom:10px}
+    @media (max-width:768px){
+      .contact{flex-direction:column;align-items:center}
+      .btn{width:100%;max-width:280px;justify-content:center}
+      .social-grid{grid-template-columns:1fr}
+      .skills{justify-content:center}
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-
-    <!-- HEADER -->
-    <header>
-      <div class="avatar">
-        <img src="image.jpeg" alt="Foto de Diego Johnathan Telenchana Punina">
-      </div>
-
-      <div class="hero">
-        <h1>Diego Johnathan Telenchana Punina</h1>
-        <div class="role">Estudiante • Desarrollo de Software</div>
-
-        <div class="contact">
-          <a class="btn" href="mailto:diegotelenchana.02sv@gmail.com">✉️ diegotelenchana.02sv@gmail.com</a>
-          <a class="btn secondary" href="tel:+593983425961">📱 0983425961</a>
-          <a class="btn secondary" href="#download">⬇️ Descargar CV</a>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div class="header-content">
+        <div class="avatar">
+          <img src="image.jpeg" alt="Diego Telenchana">
         </div>
-      </div>
-    </header>
-
-    <!-- MAIN -->
-    <main>
-
-      <!-- LEFT COLUMN -->
-      <section>
-
-        <div class="card about">
-          <h2>Sobre mí</h2>
-          <p>Soy estudiante de desarrollo de software con experiencia en creación y mantenimiento de sistemas CRUD, consumo de APIs y manejo de bases de datos. Me destaco por aprender rápido, trabajar en equipo y entregar soluciones limpias y funcionales.</p>
-
-          <div style="margin-top:12px">
-            <h4>Habilidades</h4>
-            <div class="skills">
-              <div class="skill">Laravel</div>
-              <div class="skill">PHP</div>
-              <div class="skill">MySQL</div>
-              <div class="skill">JavaScript</div>
-              <div class="skill">HTML/CSS</div>
-              <div class="skill">Git</div>
-            </div>
-          </div>
-
-          <div style="margin-top:16px">
-            <h4>Experiencia</h4>
-            <p>Desarrollo de sistemas para proyectos universitarios y personales: creación de interfaces, lógica de negocio y conexión con bases de datos. Participación en equipos de trabajo, pruebas y despliegues básicos.</p>
+        <div class="hero">
+          <h1>Diego Johnathan Telenchana Punina</h1>
+          <div class="role">Estudiante • Desarrollo de Software</div>
+          <div class="contact">
+            <a class="btn btn-primary" href="mailto:diegotelenchana.02sv@gmail.com">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+            <a class="btn btn-secondary" href="tel:+593983425961">
+              <i class="fas fa-phone"></i> 0983425961
+            </a>
+            <a class="btn btn-secondary" href="#">
+              <i class="fas fa-download"></i> Descargar CV
+            </a>
           </div>
         </div>
+      </div>
+    </div>
+  </header>
 
-        <!-- PROYECTOS -->
-        <div class="card" style="margin-top:16px">
-          <h2>Proyectos</h2>
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <!-- COLUMNA IZQUIERDA -->
+    <section>
+      <!-- EDUCACIÓN -->
+      <div class="card">
+        <h2>Educación</h2>
+        <div class="experience-item">
+          <div class="exp-date">Escuela</div>
+          <h4>Unidad Educativa José Félix Ayala</h4>
+          <p>Formación básica, destacando en áreas académicas y participación en proyectos tecnológicos.</p>
+        </div>
+        <div class="experience-item">
+          <div class="exp-date">Colegio</div>
+          <h4>Unidad Educativa Mario Cobo Barona</h4>
+          <p>Formación secundaria, participación en competencias y actividades de desarrollo académico.</p>
+        </div>
+        <div class="experience-item">
+          <div class="exp-date">Universidad</div>
+          <h4>Universidad Técnica de Cotopaxi</h4>
+          <p>Carrera de Ingeniería en Desarrollo de Software, proyectos universitarios y prácticas profesionales.</p>
+        </div>
+      </div>
 
-          <div class="projects">
-            <div class="proj">
+      <!-- HABILIDADES -->
+      <div class="card">
+        <h2>Habilidades Técnicas</h2>
+        <div class="skills">
+          <div class="skill">Laravel</div><div class="skill">PHP</div><div class="skill">MySQL</div>
+          <div class="skill">JavaScript</div><div class="skill">HTML/CSS</div><div class="skill">Git</div>
+          <div class="skill">Bootstrap</div><div class="skill">APIs REST</div><div class="skill">Python</div>
+          <div class="skill">Docker</div>
+        </div>
+      </div>
+
+      <!-- PROYECTOS -->
+      <div class="card">
+        <h2>Proyectos Destacados</h2>
+        <div class="carousel-container">
+          <div class="carousel" id="carousel">
+            <div class="carousel-item"><div class="proj">
               <h3>Sistema de Aplicaciones</h3>
               <p>Aplicación para gestionar solicitudes y procesos de aplicaciones — CRUD completo y gestión de usuarios.</p>
-              <a href="https://github.com/Jona-08/sistemaAplicaciones" target="_blank">Ver repositorio</a>
-            </div>
-
-            <div class="proj">
+              <a class="proj-link" href="https://github.com/Jona-08/sistemaAplicaciones" target="_blank">
+                Ver repositorio <i class="fas fa-arrow-right"></i>
+              </a>
+            </div></div>
+            <div class="carousel-item"><div class="proj">
               <h3>Deportista</h3>
               <p>Proyecto para gestionar información de deportistas: registro, edición y reportes básicos.</p>
-              <a href="https://gitlab.com/Jonaaa/deportista" target="_blank">Ver repositorio (GitLab)</a>
-            </div>
-
-            <div class="proj">
-              <h3>Universidad</h3>
+              <a class="proj-link" href="https://gitlab.com/Jonaaa/deportista" target="_blank">
+                Ver en GitLab <i class="fas fa-arrow-right"></i>
+              </a>
+            </div></div>
+            <div class="carousel-item"><div class="proj">
+              <h3>Sistema Universitario</h3>
               <p>Sistema académico con administración de estudiantes, materias y calificaciones.</p>
-              <a href="https://gitlab.com/Jonaaa/universidad" target="_blank">Ver repositorio (GitLab)</a>
-            </div>
-
-            <div class="proj">
-              <h3>Sistema de Votaciones</h3>
-              <p>Plataforma para gestionar votaciones electrónicas a nivel pequeño (prototipo).</p>
-              <a href="https://gitlab.com/jonaaa-group/sistemavotaciones" target="_blank">Ver repositorio (GitLab)</a>
-            </div>
-
-            <div class="proj">
-              <h3>Adopciones</h3>
-              <p>Aplicación para gestión de mascotas en adopción (repositorio público).</p>
-              <a href="https://github.com/Eddylucero/Adopciones" target="_blank">Ver repositorio</a>
-            </div>
+              <a class="proj-link" href="https://gitlab.com/Jonaaa/universidad" target="_blank">
+                Ver en GitLab <i class="fas fa-arrow-right"></i>
+              </a>
+            </div></div>
           </div>
-
-        </div>
-      </section>
-
-      <!-- RIGHT COLUMN -->
-      <aside>
-
-        <div class="card section">
-          <h4>Contacto</h4>
-          <p>Email: diegotelenchana.02sv@gmail.com</p>
-          <p>Tel: 0983425961</p>
-          <p>Ubicación: Ambato, Ecuador</p>
-        </div>
-
-        <div class="card section">
-          <h4>Educación</h4>
-
-          <p><strong>Unidad Educativa José Félix Ayala</strong><br>
-          Educación General Básica</p>
-
-          <p><strong>Unidad Educativa Mario Cobo Barona</strong><br>
-          Bachillerato General Unificado</p>
-
-          <p><strong>Universidad Técnica de Cotopaxi</strong><br>
-          Carrera: Desarrollo de Software (En curso)</p>
-        </div>
-
-        <div class="card section">
-          <h4>Descargar CV</h4>
-          <p style="color:var(--muted)">Haz clic para descargar tu CV en PDF.</p>
-          <a id="download" class="btn" href="resume.pdf" download>Descargar CV</a>
-        </div>
-
-        <div class="card section">
-          <h4>Redes</h4>
-
-          <div class="social-grid">
-
-            <a class="social-item" href="https://www.facebook.com/diego.telenchana.7" target="_blank">
-              <div class="social-icon">📘</div>
-              <div class="social-label">Facebook</div>
-            </a>
-
-            <a class="social-item" href="https://www.instagram.com/iss_jona/" target="_blank">
-              <div class="social-icon">📸</div>
-              <div class="social-label">Instagram</div>
-            </a>
-
-            <a class="social-item" href="https://www.linkedin.com/in/diego-johnathan-telenchana-punina-0636543a0/" target="_blank">
-              <div class="social-icon">🔗</div>
-              <div class="social-label">LinkedIn</div>
-            </a>
-
+          <div class="carousel-controls">
+            <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
           </div>
+          <div class="carousel-dots" id="dotsContainer"></div>
         </div>
+      </div>
+    </section>
 
-      </aside>
+    <!-- COLUMNA DERECHA -->
+    <aside>
+      <div class="card">
+        <h3>Experiencia</h3>
+        <div class="experience-item">
+          <div class="exp-date">2023 - Presente</div>
+          <h4>Desarrollador de Software</h4>
+          <p>Desarrollo de sistemas para proyectos universitarios y personales: creación de interfaces, lógica de negocio y conexión con bases de datos.</p>
+        </div>
+        <div class="experience-item">
+          <div class="exp-date">2022 - 2023</div>
+          <h4>Proyectos Académicos</h4>
+          <p>Desarrollo de aplicaciones web como parte de la formación universitaria, aplicando metodologías ágiles y buenas prácticas de desarrollo.</p>
+        </div>
+      </div>
 
-    </main>
-
-    <footer>
-      Diseñado por Diego Johnathan • Portafolio generado automáticamente
-    </footer>
+      <div class="card">
+        <h3>Redes y Contacto</h3>
+        <div class="social-grid">
+          <a class="social-item" href="https://www.linkedin.com/in/diego-johnathan-telenchana-punina-0636543a0/" target="_blank">
+            <div class="social-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="social-label">LinkedIn</div>
+          </a>
+          <a class="social-item" href="https://github.com/Jona-08" target="_blank">
+            <div class="social-icon"><i class="fab fa-github"></i></div>
+            <div class="social-label">GitHub</div>
+          </a>
+          <a class="social-item" href="https://gitlab.com/Jonaaa" target="_blank">
+            <div class="social-icon"><i class="fab fa-gitlab"></i></div>
+            <div class="social-label">GitLab</div>
+          </a>
+          <a class="social-item" href="mailto:diegotelenchana.02sv@gmail.com">
+            <div class="social-icon"><i class="fas fa-envelope"></i></div>
+            <div class="social-label">Email</div>
+          </a>
+        </div>
+        <div style="margin-top:20px;padding-top:15px;border-top:1px solid var(--gray-light)">
+          <h4>Disponibilidad</h4>
+          <p>Actualmente disponible para proyectos freelance y prácticas profesionales relacionadas con desarrollo de software.</p>
+        </div>
+      </div>
+    </aside>
   </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Diego Telenchana</h4>
+          <p>Desarrollador de software en formación, especializado en creación de aplicaciones web y soluciones tecnológicas.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Sobre mí</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Proyectos</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Habilidades</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:diegotelenchana.02sv@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+            <li><a href="tel:+593983425961"><i class="fas fa-phone"></i> 0983425961</a></li>
+            <li><a href="#"><i class="fas fa-download"></i> Descargar CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Diego Johnathan Telenchana Punina</p>
+        <p>Portafolio profesional</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('carousel');
+      const items = carousel.querySelectorAll('.carousel-item');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('dotsContainer');
+      
+      let currentIndex = 0;
+      const totalItems = items.length;
+      
+      // Create dots
+      for (let i = 0; i < totalItems; i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+      
+      const dots = document.querySelectorAll('.dot');
+      
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+      
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+      }
+      
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+      }
+      
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+    
+      // Auto slide
+      let autoSlide = setInterval(nextSlide, 5000);
+      
+      function resetAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, 5000);
+      }
+      
+      prevBtn.addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
+      nextBtn.addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+      
+      const carouselContainer = document.querySelector('.carousel-container');
+      carouselContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
+      carouselContainer.addEventListener('mouseleave', () => autoSlide = setInterval(nextSlide, 5000));
+      
+      updateCarousel();
+    });
+  </script>
 </body>
 </html>
+
